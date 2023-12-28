@@ -1,13 +1,13 @@
 import { window, TextEditor, workspace, Range, Uri } from 'vscode';
 
-// Concentric CSS order taken from https://github.com/brandon-rhodes/Concentric-CSS
+// Concentric CSS order taken from https://github.com/brandon-rhodes/ConcentricCSS
 const defaultOrder = [
   /* browser default styles */
   'all',
   'appearance',
 
   /* box model */
-  'box-sizing',
+  'boxSizing',
 
   /* position */
   'display',
@@ -22,261 +22,261 @@ const defaultOrder = [
 
   /* flex */
   'flex',
-  'flex-basis',
-  'flex-direction',
-  'flex-flow',
-  'flex-grow',
-  'flex-shrink',
-  'flex-wrap',
+  'flexBasis',
+  'flexDirection',
+  'flexFlow',
+  'flexGrow',
+  'flexShrink',
+  'flexWrap',
 
   /* grid */
   'grid',
-  'grid-area',
-  'grid-template',
-  'grid-template-areas',
-  'grid-template-rows',
-  'grid-template-columns',
-  'grid-row',
-  'grid-row-start',
-  'grid-row-end',
-  'grid-column',
-  'grid-column-start',
-  'grid-column-end',
-  'grid-auto-rows',
-  'grid-auto-columns',
-  'grid-auto-flow',
-  'grid-gap',
-  'grid-row-gap',
-  'grid-column-gap',
+  'gridArea',
+  'gridTemplate',
+  'gridTemplateAreas',
+  'gridTemplateRows',
+  'gridTemplateColumns',
+  'gridRow',
+  'gridRowStart',
+  'gridRowEnd',
+  'gridColumn',
+  'gridColumnStart',
+  'gridColumnEnd',
+  'gridAutoRows',
+  'gridAutoColumns',
+  'gridAutoFlow',
+  'gridGap',
+  'gridRowGap',
+  'gridColumnGap',
 
   /* flex align */
-  'align-content',
-  'align-items',
-  'align-self',
+  'alignContent',
+  'alignItems',
+  'alignSelf',
 
   /* flex justify */
-  'justify-content',
-  'justify-items',
-  'justify-self',
+  'justifyContent',
+  'justifyItems',
+  'justifySelf',
 
   /* order */
   'order',
 
   /* columns */
   'columns',
-  'column-gap',
-  'column-fill',
-  'column-rule',
-  'column-rule-width',
-  'column-rule-style',
-  'column-rule-color',
-  'column-span',
-  'column-count',
-  'column-width',
+  'columnGap',
+  'columnFill',
+  'columnRule',
+  'columnRuleWidth',
+  'columnRuleStyle',
+  'columnRuleColor',
+  'columnSpan',
+  'columnCount',
+  'columnWidth',
 
   /* transform */
-  'backface-visibility',
+  'backfaceVisibility',
   'perspective',
-  'perspective-origin',
+  'perspectiveOrigin',
   'transform',
-  'transform-origin',
-  'transform-style',
+  'transformOrigin',
+  'transformStyle',
 
   /* transitions */
   'transition',
-  'transition-delay',
-  'transition-duration',
-  'transition-property',
-  'transition-timing-function',
+  'transitionDelay',
+  'transitionDuration',
+  'transitionProperty',
+  'transitionTimingFunction',
 
   /* visibility */
   'visibility',
   'opacity',
-  'mix-blend-mode',
+  'mixBlendMode',
   'isolation',
-  'z-index',
+  'zIndex',
 
   /* margin */
   'margin',
-  'margin-top',
-  'margin-right',
-  'margin-bottom',
-  'margin-left',
+  'marginTop',
+  'marginRight',
+  'marginBottom',
+  'marginLeft',
 
   /* outline */
   'outline',
-  'outline-offset',
-  'outline-width',
-  'outline-style',
-  'outline-color',
+  'outlineOffset',
+  'outlineWidth',
+  'outlineStyle',
+  'outlineColor',
 
   /* border */
   'border',
-  'border-top',
-  'border-right',
-  'border-bottom',
-  'border-left',
-  'border-width',
-  'border-top-width',
-  'border-right-width',
-  'border-bottom-width',
-  'border-left-width',
+  'borderTop',
+  'borderRight',
+  'borderBottom',
+  'borderLeft',
+  'borderWidth',
+  'borderTopWidth',
+  'borderRightWidth',
+  'borderBottomWidth',
+  'borderLeftWidth',
 
-  /* border-style */
-  'border-style',
-  'border-top-style',
-  'border-right-style',
-  'border-bottom-style',
-  'border-left-style',
+  /* borderStyle */
+  'borderStyle',
+  'borderTopStyle',
+  'borderRightStyle',
+  'borderBottomStyle',
+  'borderLeftStyle',
 
-  /* border-radius */
-  'border-radius',
-  'border-top-left-radius',
-  'border-top-right-radius',
-  'border-bottom-left-radius',
-  'border-bottom-right-radius',
+  /* borderRadius */
+  'borderRadius',
+  'borderTopLeftRadius',
+  'borderTopRightRadius',
+  'borderBottomLeftRadius',
+  'borderBottomRightRadius',
 
-  /* border-color */
-  'border-color',
-  'border-top-color',
-  'border-right-color',
-  'border-bottom-color',
-  'border-left-color',
+  /* borderColor */
+  'borderColor',
+  'borderTopColor',
+  'borderRightColor',
+  'borderBottomColor',
+  'borderLeftColor',
 
-  /* border-image */
-  'border-image',
-  'border-image-source',
-  'border-image-width',
-  'border-image-outset',
-  'border-image-repeat',
-  'border-image-slice',
+  /* borderImage */
+  'borderImage',
+  'borderImageSource',
+  'borderImageWidth',
+  'borderImageOutset',
+  'borderImageRepeat',
+  'borderImageSlice',
 
-  /* box-shadow */
-  'box-shadow',
+  /* boxShadow */
+  'boxShadow',
 
   /* background */
   'background',
-  'background-attachment',
-  'background-clip',
-  'background-color',
-  'background-image',
-  'background-origin',
-  'background-position',
-  'background-repeat',
-  'background-size',
-  'background-blend-mode',
+  'backgroundAttachment',
+  'backgroundClip',
+  'backgroundColor',
+  'backgroundImage',
+  'backgroundOrigin',
+  'backgroundPosition',
+  'backgroundRepeat',
+  'backgroundSize',
+  'backgroundBlendMode',
 
   /* cursor */
   'cursor',
 
   /* padding */
   'padding',
-  'padding-top',
-  'padding-right',
-  'padding-bottom',
-  'padding-left',
+  'paddingTop',
+  'paddingRight',
+  'paddingBottom',
+  'paddingLeft',
 
   /* width */
   'width',
-  'min-width',
-  'max-width',
+  'minWidth',
+  'maxWidth',
 
   /* height */
   'height',
-  'min-height',
-  'max-height',
+  'minHeight',
+  'maxHeight',
 
   /* overflow */
   'overflow',
-  'overflow-x',
-  'overflow-y',
+  'overflowX',
+  'overflowY',
   'resize',
 
-  /* list-style */
-  'list-style',
-  'list-style-type',
-  'list-style-position',
-  'list-style-image',
-  'caption-side',
+  /* listStyle */
+  'listStyle',
+  'listStyleType',
+  'listStylePosition',
+  'listStyleImage',
+  'captionSide',
 
   /* tables */
-  'table-layout',
-  'border-collapse',
-  'border-spacing',
-  'empty-cells',
+  'tableLayout',
+  'borderCollapse',
+  'borderSpacing',
+  'emptyCells',
 
   /* animation */
-  /* animation-[[name] [duration] [timing-function] [delay] [iteration-count] [direction] [fill-mode] [play-state]]*/
+  /* animation-[[name] [duration] [timingFunction] [delay] [iterationCount] [direction] [fillMode] [playState]]*/
   'animation',
-  'animation-name',
-  'animation-duration',
-  'animation-timing-function',
-  'animation-delay',
-  'animation-iteration-count',
-  'animation-direction',
-  'animation-fill-mode',
-  'animation-play-state',
+  'animationName',
+  'animationDuration',
+  'animationTimingFunction',
+  'animationDelay',
+  'animationIterationCount',
+  'animationDirection',
+  'animationFillMode',
+  'animationPlayState',
 
-  /* vertical-alignment */
-  'vertical-align',
+  /* verticalAlignment */
+  'verticalAlign',
 
-  /* text-alignment & decoration */
+  /* textAlignment & decoration */
   'direction',
-  'tab-size',
-  'text-align',
-  'text-align-last',
-  'text-justify',
-  'text-indent',
-  'text-transform',
-  'text-decoration',
-  'text-decoration-color',
-  'text-decoration-line',
-  'text-decoration-style',
-  'text-rendering',
-  'text-shadow',
-  'text-overflow',
+  'tabSize',
+  'textAlign',
+  'textAlignLast',
+  'textJustify',
+  'textIndent',
+  'textTransform',
+  'textDecoration',
+  'textDecorationColor',
+  'textDecorationLine',
+  'textDecorationStyle',
+  'textRendering',
+  'textShadow',
+  'textOverflow',
 
-  /* text-spacing */
-  'line-height',
-  'word-spacing',
-  'letter-spacing',
-  'white-space',
-  'word-break',
-  'word-wrap',
+  /* textSpacing */
+  'lineHeight',
+  'wordSpacing',
+  'letterSpacing',
+  'whiteSpace',
+  'wordBreak',
+  'wordWrap',
   'color',
 
   /* font */
   'font',
-  'font-family',
-  'font-kerning',
-  'font-size',
-  'font-size-adjust',
-  'font-stretch',
-  'font-weight',
-  'font-smoothing',
-  'osx-font-smoothing',
-  'font-variant',
-  'font-style',
+  'fontFamily',
+  'fontKerning',
+  'fontSize',
+  'fontSizeAdjust',
+  'fontStretch',
+  'fontWeight',
+  'fontSmoothing',
+  'osxFontSmoothing',
+  'fontVariant',
+  'fontStyle',
 
   /* content */
   'content',
   'quotes',
 
   /* counters */
-  'counter-reset',
-  'counter-increment',
+  'counterReset',
+  'counterIncrement',
 
   /* breaks */
-  'page-break-before',
-  'page-break-after',
-  'page-break-inside',
+  'pageBreakBefore',
+  'pageBreakAfter',
+  'pageBreakInside',
 
   /* mouse */
-  'pointer-events',
+  'pointerEvents',
 
   /* intent */
   /* provides a way for authors to hint browsers about the kind of changes to be expected on an element, so that the browser can set up appropriate optimizations ahead of time before the element is actually changed. These kind of optimizations can increase the responsiveness of a page by doing potentially expensive work ahead of time before they are actually required. */
-  'will-change'
+  'willChange'
 ];
 
 type SortingAlgorithm = (a: string, b: string) => number;
@@ -335,7 +335,7 @@ interface ISettings {
   customOrder?: string[];
 }
 
-// tslint:disable-next-line
+// tslint:disableNextLine
 function getSettings(UriWorkspace: Uri): ISettings {
   const settings = workspace.getConfiguration(null, UriWorkspace).get('sortConcentrically') as ISettings;
 
